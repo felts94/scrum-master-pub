@@ -1,0 +1,16 @@
+<h2>{{teamname}}</h2>
+<p>{{leader}} is the leader</p>
+<h3>Members</h3>
+{% for member in members %}
+    <form method="get" action="/team/{{teamname}}/{{member}}">
+        <p>{{member}}:</p>
+        <p>Yesterday: {{member.prev}}</p>
+        <p>Today: <input type="text" name=memberupdate></p>
+        <p><input type="submit" value="Add Update"></button>
+    </form>
+    <hr>
+{% endfor %}
+<form method="post">
+    <p>New Member: <input type=textbox name=newmember>
+    <p><input type=submit value="Add Member">
+</form>
